@@ -44,7 +44,6 @@ import {
   Unlock,
   Lock,
   ArrowDown,
-  Youtube,
   Share2,
   Settings,
   Plug,
@@ -2979,7 +2978,7 @@ const App = () => {
                     <div className="mt-10 bg-slate-900 p-5 sm:p-6 rounded-2xl shadow-lg border border-slate-800">
                       <div className="flex items-center gap-3 mb-5">
                         <div className="bg-red-600/20 p-2 rounded-lg">
-                          <Youtube className="text-red-500" size={28} />
+                          <MonitorPlay className="text-red-500" size={28} />
                         </div>
                         <div>
                           <h5 className="font-bold text-white text-lg leading-tight">Video Rujukan Praktikal</h5>
