@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/emodul-ikr3013/', // <-- TAMBAH BARIS INI (Sangat Penting!)
+  base: '/eModul-IKR3013/', // <-- TAMBAH BARIS INI (Sangat Penting!)
   plugins: [
     react(),
     tailwindcss(),

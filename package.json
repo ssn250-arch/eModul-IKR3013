@@ -1,5 +1,5 @@
 {
-  "name": "emodul-ikr3013",
+  "name": "eModul-IKR3013",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",        // <-- TAMBAH INI
+    "predeploy": "npm run build",       
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
