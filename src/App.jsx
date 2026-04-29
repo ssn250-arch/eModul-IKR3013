@@ -44,7 +44,7 @@ import {
   Unlock,
   Lock,
   ArrowDown,
-  //Youtube,
+  Youtube,
   Share2,
   Settings,
   Plug,
@@ -2983,7 +2983,7 @@ const App = () => {
                     <div className="mt-10 bg-slate-900 p-5 sm:p-6 rounded-2xl shadow-lg border border-slate-800">
                       <div className="flex items-center gap-3 mb-5">
                         <div className="bg-red-600/20 p-2 rounded-lg">
-                          <MonitorPlay className="text-red-500" size={32} />
+                          <Youtube className="text-red-500" size={28} />
                         </div>
                         <div>
                           <h5 className="font-bold text-white text-lg leading-tight">Video Rujukan Praktikal</h5>
@@ -3340,8 +3340,8 @@ const App = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-900 overflow-x-hidden">
-      <div className="max-w-4xl mx-auto py-4 sm:py-8 px-4 sm:px-0">
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-900 overflow-x-hidden flex flex-col">
+      <div className="max-w-4xl mx-auto py-4 sm:py-8 px-4 sm:px-0 flex-1 w-full">
         {view === 'menu' && renderMenu()}
         {view === 'topic' && renderTopic()}
         {view === 'quiz' && renderQuiz()}
@@ -3350,6 +3350,13 @@ const App = () => {
         {view === 'recommender' && renderRecommender()}
         {view === 'ar' && renderAR()}
       </div>
+      
+      {/* --- BAHAGIAN FOOTER --- */}
+      <footer className="w-full py-6 mt-auto border-t border-gray-200 bg-white text-center shadow-[0_-5px_15px_-10px_rgba(0,0,0,0.1)] z-10">
+        <p className="text-gray-500 text-sm font-semibold tracking-wide">
+          Copyright &copy; TKR ADTEC SANDAKAN 2026
+        </p>
+      </footer>
       
       <style>{`
         @keyframes fadeIn {
