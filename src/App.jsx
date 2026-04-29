@@ -104,7 +104,7 @@ const topics = [
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
     description: 'Tulang belakang yang menghubungkan semua komponen.',
     content: {
-      basics: [], // Dikosongkan, digantikan dengan rekaan infografik di bawah
+      basics: [], 
       advanced: [
         { title: "PCIe 5.0", desc: "Standard sambungan terpantas masa kini untuk GPU dan SSD, dengan kelajuan data berganda berbanding PCIe 4.0." },
         { title: "Wi-Fi 7 Technology", desc: "Banyak papan induk moden kini dilengkapi sambungan rangkaian tanpa wayar dan berwayar terpantas secara terbina." },
@@ -120,7 +120,7 @@ const topics = [
     image: 'https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=800&q=80',
     description: 'Menyimpan data sementara untuk akses pantas oleh CPU.',
     content: {
-      basics: [], // Dikosongkan, digantikan dengan rekaan infografik di bawah
+      basics: [], 
       advanced: [
         { title: "DDR5 RAM", desc: "Standard terkini dengan kelajuan asas 4800MHz ke atas, pengurusan tenaga lebih baik (PMIC pada stik RAM)." },
         { title: "CAMM2 Memory", desc: "Format baharu untuk laptop yang menggantikan slot SO-DIMM tradisional untuk menjimatkan ruang dan meningkatkan kelajuan." },
@@ -136,7 +136,7 @@ const topics = [
     image: 'https://images.unsplash.com/photo-1531492746076-161ca9bcad58?auto=format&fit=crop&w=800&q=80',
     description: 'Menyimpan data kekal (OS, Fail, Gambar).',
     content: {
-      basics: [], // Dikosongkan, digantikan dengan infografik kustom di bawah
+      basics: [], 
       advanced: [
         { title: "NVMe Gen 5 SSD", desc: "SSD generasi baru yang mencapai kelajuan bacaan sehingga 12,000 MB/s (12GB/s)." },
         { title: "3D NAND QLC PLC", desc: "Teknologi menyusun sel memori secara bertingkat untuk memuatkan kapasiti besar (4TB, 8TB) dalam saiz kecil." },
@@ -151,7 +151,7 @@ const topics = [
     color: 'bg-amber-500',
     description: 'Nadi utama yang menyalurkan elektrik secara stabil.',
     content: {
-      basics: [], // Digantikan dengan infografik kustom
+      basics: [], 
       advanced: [
         { title: "ATX 3.0 Standard", desc: "Standard bekalan kuasa terkini yang mampu menampung lonjakan kuasa tinggi dari kad grafik (GPU) generasi baru." },
         { title: "12VHPWR Cable", desc: "Kabel kuasa khusus 16-pin yang direka untuk siri Nvidia RTX 40 bagi menggantikan palam 8-pin tradisional." },
@@ -166,7 +166,7 @@ const topics = [
     color: 'bg-cyan-500',
     description: 'Mengawal haba agar komponen tidak terlalu panas.',
     content: {
-      basics: [], // Digantikan dengan infografik kustom
+      basics: [], 
       advanced: [
         { title: "Custom Loop Water Cooling", desc: "Sistem penyejukan air tegar yang direka khas dan disambung sendiri oleh pengguna secara manual. Harga premium dan estetik." },
         { title: "Liquid Metal Thermal Paste", desc: "Pes terma berasaskan logam cecair yang mempunyai tahap kekonduksian haba (thermal conductivity) luar biasa berbanding silikon biasa." },
@@ -1858,7 +1858,7 @@ const App = () => {
                           { label: 'DDR2', notch: '52%', color: 'bg-green-700', chips: 8 },
                           { label: 'DDR3', notch: '38%', color: 'bg-teal-700', chips: 8 },
                           { label: 'DDR4', notch: '45%', color: 'bg-green-600', chips: 8 },
-                          { label: 'DDR5', notch: '50%', color: 'bg-slate-900', chips: 4 } // DDR5 selalunya warna hitam, cip berpusat
+                          { label: 'DDR5', notch: '50%', color: 'bg-slate-900', chips: 4 } 
                         ].map((ram, i) => (
                           <div key={i} className="flex items-center gap-2 sm:gap-6 group">
                             <div className="w-12 sm:w-16 text-right font-black text-lg sm:text-2xl text-slate-400 group-hover:text-blue-400 transition-colors">
@@ -1866,7 +1866,6 @@ const App = () => {
                             </div>
                             <div className={`flex-1 h-14 sm:h-16 ${ram.color} rounded-sm relative border-t-2 border-l border-r border-white/20 shadow-[0_5px_15px_rgba(0,0,0,0.5)] flex items-center px-4 overflow-hidden hover:scale-[1.02] transition-transform`}>
                               
-                              {/* Cip RAM Hitam */}
                               <div className="flex gap-1.5 sm:gap-3 w-full px-2 sm:px-6 justify-between opacity-90 z-0">
                                 {[...Array(ram.chips)].map((_, j) => (
                                   <div key={j} className="w-4 h-6 sm:w-8 sm:h-10 bg-slate-800 rounded-sm border-t border-l border-slate-600 shadow-sm flex items-center justify-center">
@@ -1875,20 +1874,17 @@ const App = () => {
                                 ))}
                               </div>
                               
-                              {/* Pelekat / Sticker Info */}
                               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 sm:w-32 h-5 sm:h-7 bg-white/95 rounded shadow-sm flex items-center justify-center border border-slate-300 z-10">
                                 <span className="text-[6px] sm:text-[9px] text-slate-800 font-mono font-bold tracking-tighter">
                                   {ram.label}-8GB MODULE
                                 </span>
                               </div>
 
-                              {/* Kawasan Pin Emas di Bawah */}
                               <div className="absolute bottom-0 left-0 w-full h-2 sm:h-2.5 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600 border-t border-yellow-700/50 flex" style={{
                                   backgroundImage: 'repeating-linear-gradient(to right, transparent, transparent 1px, rgba(0,0,0,0.5) 1px, rgba(0,0,0,0.5) 2px)'
                               }}>
                               </div>
 
-                              {/* Alur Lekuk (Notch) */}
                               <div className="absolute bottom-0 w-1.5 sm:w-2.5 h-3 sm:h-4 bg-slate-800 rounded-t-full shadow-inner z-20" style={{ left: ram.notch, transform: 'translateX(-50%)' }}></div>
                             </div>
                           </div>
@@ -2424,7 +2420,7 @@ const App = () => {
 
                       <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-rose-300 transition-colors flex flex-col items-center text-center group">
                         <div className="bg-rose-100 text-rose-600 p-4 rounded-xl mb-4 group-hover:scale-110 transition-transform"><ShieldAlert size={32}/></div>
-                        <h5 className="font-bold text-slate-800 text-lg mb-2">Perisai Perlamatan</h5>
+                        <h5 className="font-bold text-slate-800 text-lg mb-2">Perisai Keselamatan</h5>
                         <p className="text-sm text-slate-600 leading-relaxed">Mempunyai litar pengesan seperti <strong>OVP</strong> (Perlindungan Lebih Voltan) atau <strong>SCP</strong> bagi menghalang litar pintas dari merosakkan komponen lain.</p>
                       </div>
                     </div>
@@ -3076,13 +3072,137 @@ const App = () => {
                     <ExternalLink size={16} className="text-purple-400 group-hover:text-purple-600" />
                   </div>
                   <p className="text-gray-600 leading-relaxed group-hover:text-gray-800">{item.desc}</p>
-                  <p className="text-xs text-purple-500 mt-4 font-medium flex items-center opacity-70 group-hover:opacity-100 transition-opacity">
-                    Baca lebih lanjut di Google <ChevronRight size={12} className="ml-1" />
-                  </p>
+                  <p className="text-xs font-bold text-purple-500 mt-4 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"><Search size={14}/> Carian Lanjut</p>
                 </a>
               ))}
             </div>
           )}
+        </div>
+        <BackButton />
+      </div>
+    </div>
+  );
+
+  const renderQuiz = () => (
+    <div className="animate-fade-in">
+      {!quizCompleted ? (
+        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+          <div className="flex items-center justify-between mb-8 border-b border-gray-100 pb-6">
+            <h2 className="text-3xl font-bold flex items-center gap-3">
+              <CheckCircle className="text-green-500" size={32}/> Kuiz Penilaian
+            </h2>
+            <span className="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full font-bold text-sm">
+              {Object.keys(quizAnswers).length} / {quizQuestions.length} Menjawab
+            </span>
+          </div>
+          
+          <div className="space-y-8">
+            {quizQuestions.map((q, qIndex) => (
+              <div key={qIndex} className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                <p className="font-bold text-lg mb-4 text-gray-800">{qIndex + 1}. {q.question}</p>
+                <div className="space-y-3">
+                  {q.options.map((opt, oIndex) => (
+                    <label key={oIndex} className={`flex items-center p-4 rounded-lg cursor-pointer border-2 transition-all ${quizAnswers[qIndex] === oIndex ? 'border-blue-500 bg-blue-50' : 'border-gray-200 bg-white hover:border-blue-300'}`}>
+                      <input 
+                        type="radio" 
+                        name={`q-${qIndex}`} 
+                        value={oIndex}
+                        checked={quizAnswers[qIndex] === oIndex}
+                        onChange={() => handleQuizSubmit(qIndex, oIndex)}
+                        className="w-5 h-5 text-blue-600 focus:ring-blue-500 border-gray-300"
+                      />
+                      <span className="ml-3 text-gray-700 font-medium">{opt}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <button 
+              onClick={calculateScore}
+              disabled={Object.keys(quizAnswers).length < quizQuestions.length}
+              className={`px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-lg ${Object.keys(quizAnswers).length < quizQuestions.length ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600 text-white hover:-translate-y-1'}`}
+            >
+              Hantar Jawapan
+            </button>
+            {Object.keys(quizAnswers).length < quizQuestions.length && (
+              <p className="text-red-500 text-sm mt-3 font-medium">Sila jawab semua soalan sebelum menghantar.</p>
+            )}
+          </div>
+        </div>
+      ) : (
+        <div className="bg-white rounded-2xl shadow-xl p-10 text-center border border-gray-100">
+          <div className="w-32 h-32 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-6">
+            <Award className="text-green-500" size={64} />
+          </div>
+          <h2 className="text-4xl font-bold mb-4 text-gray-800">Keputusan Kuiz</h2>
+          <div className="text-6xl font-black text-blue-600 mb-6">
+            {quizScore} <span className="text-2xl text-gray-400">/ {quizQuestions.length}</span>
+          </div>
+          
+          <div className="max-w-lg mx-auto bg-gray-50 p-6 rounded-xl mb-8 border border-gray-200">
+            <p className="text-lg text-gray-700 font-medium">
+              {quizScore === quizQuestions.length ? 'Luar biasa! Anda menguasai topik ini dengan sempurna.' : 
+               quizScore >= quizQuestions.length * 0.7 ? 'Tahniah! Pencapaian yang sangat membanggakan.' :
+               quizScore >= quizQuestions.length * 0.5 ? 'Bagus, tetapi masih ada ruang untuk penambahbaikan.' :
+               'Sila ulang kaji semula nota-nota yang disediakan.'}
+            </p>
+          </div>
+
+          <button 
+            onClick={() => {
+              setQuizAnswers({});
+              setQuizCompleted(false);
+              setQuizScore(0);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="px-8 py-3 bg-blue-100 text-blue-700 font-bold rounded-xl hover:bg-blue-200 transition-colors inline-flex items-center gap-2"
+          >
+            <RotateCcw size={20}/> Cuba Lagi
+          </button>
+        </div>
+      )}
+      <BackButton />
+    </div>
+  );
+
+  const renderInspection = () => (
+    <div className="animate-fade-in w-full">
+      <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+        <div className="bg-yellow-500 p-8 text-white">
+          <h2 className="text-3xl font-bold flex items-center gap-3"><AlertTriangle size={36}/> Prosedur Pemeriksaan & Penyelenggaraan</h2>
+          <p className="opacity-90 mt-2 text-lg">Langkah keselamatan dan amalan terbaik sebelum, semasa, dan selepas mengendalikan perkakasan.</p>
+        </div>
+        
+        <div className="p-8 space-y-8">
+          <div className="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
+            <h3 className="text-xl font-bold text-yellow-800 mb-4 flex items-center gap-2"><ShieldCheck size={24}/> Keselamatan Diri (Anti-Statik)</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3"><Check className="text-yellow-600 shrink-0 mt-1"/> <span className="text-gray-700">Sentiasa matikan bekalan kuasa (PSU) dan cabut palam dari soket dinding.</span></li>
+              <li className="flex items-start gap-3"><Check className="text-yellow-600 shrink-0 mt-1"/> <span className="text-gray-700">Gunakan gelang tangan anti-statik (ESD Wrist Strap) atau sentuh bahagian besi casing untuk membuang cas statik badan.</span></li>
+              <li className="flex items-start gap-3"><Check className="text-yellow-600 shrink-0 mt-1"/> <span className="text-gray-700">Elakkan bekerja di atas permaidani.</span></li>
+            </ul>
+          </div>
+
+          <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
+            <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center gap-2"><Search size={24}/> Pemeriksaan Visual (Visual Inspection)</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3"><Check className="text-blue-600 shrink-0 mt-1"/> <span className="text-gray-700">Periksa kapasitor pada motherboard (pastikan tiada yang kembung atau bocor).</span></li>
+              <li className="flex items-start gap-3"><Check className="text-blue-600 shrink-0 mt-1"/> <span className="text-gray-700">Periksa kesan terbakar (burn marks) atau bau hangit pada komponen.</span></li>
+              <li className="flex items-start gap-3"><Check className="text-blue-600 shrink-0 mt-1"/> <span className="text-gray-700">Pastikan kipas (CPU, GPU, Casing) tidak tersangkut habuk tebal.</span></li>
+            </ul>
+          </div>
+
+          <div className="bg-green-50 p-6 rounded-xl border border-green-200">
+            <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center gap-2"><Wrench size={24}/> Penyelenggaraan Berkala</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3"><Check className="text-green-600 shrink-0 mt-1"/> <span className="text-gray-700">Bersihkan habuk menggunakan 'Compressed Air' setiap 3-6 bulan.</span></li>
+              <li className="flex items-start gap-3"><Check className="text-green-600 shrink-0 mt-1"/> <span className="text-gray-700">Ganti 'Thermal Paste' CPU setiap 1-2 tahun untuk pengaliran haba optimum.</span></li>
+              <li className="flex items-start gap-3"><Check className="text-green-600 shrink-0 mt-1"/> <span className="text-gray-700">Kemas kini BIOS dan pemacu peranti (drivers) untuk kestabilan sistem.</span></li>
+            </ul>
+          </div>
         </div>
       </div>
       <BackButton />
@@ -3091,192 +3211,46 @@ const App = () => {
 
   const renderSelectionGuide = () => (
     <div className="animate-fade-in w-full">
-      <div className="max-w-3xl mx-auto">
-        <div className="flex items-center mb-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-            <div className="p-3 bg-purple-100 text-purple-600 rounded-lg mr-4">
-                <ShoppingCart size={32} />
-            </div>
-            <div>
-                <h2 className="text-2xl font-bold text-gray-800">Panduan Pemilihan Komponen</h2>
-                <p className="text-gray-600">Tips keserasian sebelum membina komputer.</p>
-            </div>
+      <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+        <div className="bg-purple-600 p-8 text-white">
+          <h2 className="text-3xl font-bold flex items-center gap-3"><ShoppingCart size={36}/> Panduan Pemilihan & Keserasian</h2>
+          <p className="opacity-90 mt-2 text-lg">Bagaimana untuk memilih komponen yang serasi antara satu sama lain.</p>
         </div>
-
-        <div className="grid gap-6">
-            <div className="bg-white p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-lg text-blue-700 mb-2 flex items-center"><Cpu size={20} className="mr-2"/> CPU & Motherboard</h3>
-                <p className="text-gray-700 mb-2">Pastikan <strong>SOKET</strong> sepadan.</p>
-                <ul className="list-disc list-inside text-sm text-gray-600 ml-2">
-                    <li>Intel: Menggunakan soket LGA (cth: LGA 1700).</li>
-                    <li>AMD: Menggunakan soket AM4 atau AM5.</li>
-                </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border-l-4 border-purple-500 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-lg text-purple-700 mb-2 flex items-center"><MemoryStick size={20} className="mr-2"/> Memori (RAM)</h3>
-                <p className="text-gray-700 mb-2">Semak jenis DDR dan kelajuan.</p>
-                <ul className="list-disc list-inside text-sm text-gray-600 ml-2">
-                    <li>Pastikan motherboard menyokong DDR3, DDR4 atau DDR5.</li>
-                    <li>Semak kelajuan maksimum (MHz) yang disokong oleh motherboard.</li>
-                </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border-l-4 border-emerald-500 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-lg text-emerald-700 mb-2 flex items-center"><CircuitBoard size={20} className="mr-2"/> Kad Grafik (GPU) & Casing</h3>
-                <ul className="list-disc list-inside text-sm text-gray-600 ml-2 space-y-2">
-                    <li>Motherboard mesti ada slot <strong>PCIe x16</strong>.</li>
-                    <li><strong>Saiz Casing:</strong> Pastikan kad grafik yang panjang muat dimasukkan ke dalam casing.</li>
-                    <li><strong>Form Factor:</strong> Casing mesti sesuai dengan saiz motherboard (ATX, mATX, ITX).</li>
-                </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border-l-4 border-orange-500 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-lg text-orange-700 mb-2 flex items-center"><Zap size={20} className="mr-2"/> Bekalan Kuasa (PSU)</h3>
-                <ul className="list-disc list-inside text-sm text-gray-600 ml-2 space-y-2">
-                    <li><strong>Watt:</strong> Mesti mencukupi untuk menampung CPU dan GPU (cth: 600W - 1000W).</li>
-                    <li><strong>Penyambung:</strong> Pastikan ada kabel 24-pin (Mobo) dan 8-pin EPS (CPU) yang betul.</li>
-                </ul>
-            </div>
-        </div>
-      </div>
-      <BackButton />
-    </div>
-  );
-
-  const renderInspection = () => (
-    <div className="animate-fade-in w-full">
-      <div className="max-w-3xl mx-auto">
-        <div className="flex items-center mb-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-            <div className="p-3 bg-yellow-100 text-yellow-600 rounded-lg mr-4">
-                <AlertTriangle size={32} />
-            </div>
-            <div>
-                <h2 className="text-2xl font-bold text-gray-800">Prosedur Pemeriksaan & Penyelenggaraan</h2>
-                <p className="text-gray-600">Langkah-langkah menjaga jangka hayat komputer.</p>
-            </div>
-        </div>
-      
-        <div className="space-y-6">
-            <div className="bg-white p-6 rounded-xl border shadow-sm">
-                <h3 className="font-bold text-gray-800 text-lg mb-4 border-b pb-2">Pemeriksaan Fizikal</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 className="font-bold text-blue-600 mb-2">Luaran</h4>
-                        <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                            <li>Pastikan tiada kerosakan/kemek pada casing.</li>
-                            <li>Port (USB/HDMI) tidak bengkok atau patah.</li>
-                            <li>Kabel kuasa dalam keadaan baik (tidak terkoyak).</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-blue-600 mb-2">Dalaman</h4>
-                        <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                            <li><strong>CPU:</strong> Penyejuk dipasang kemas, tiada tanda overheating.</li>
-                            <li><strong>Motherboard:</strong> Tiada kapasitor yang kembung atau bocor.</li>
-                            <li><strong>RAM/GPU:</strong> Dipasang rapat dan terkunci dalam slot.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border shadow-sm">
-                <h3 className="font-bold text-gray-800 text-lg mb-4 border-b pb-2">Kaedah Pembersihan</h3>
-                <div className="flex gap-4 items-start">
-                    <div className="p-2 bg-green-100 rounded text-green-600 mt-1">
-                        <CheckCircle size={20} />
-                    </div>
-                    <ul className="space-y-2 text-gray-700">
-                        <li>Gunakan <strong>udara termampat (compressed air)</strong> untuk membuang debu dari celah komponen.</li>
-                        <li>Bersihkan slot memori dan bilah kipas dengan berhati-hati.</li>
-                        <li>Gunakan <strong>alkohol isopropyl</strong> dan kain lembut untuk membersihkan kotoran degil pada papan induk (jika perlu).</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-      </div>
-      <BackButton />
-    </div>
-  );
-
-  const renderQuiz = () => (
-    <div className="animate-fade-in max-w-2xl mx-auto w-full">
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-        <div className="bg-blue-600 p-6 text-white text-center">
-          <h2 className="text-2xl font-bold">Kuiz Pengukuhan IKR3013</h2>
-          <p className="opacity-90">Jawab semua soalan di bawah.</p>
-        </div>
-
+        
         <div className="p-8 space-y-8">
-          {!quizCompleted ? (
-            <>
-              {quizQuestions.map((q, qIdx) => (
-                <div key={qIdx} className="space-y-3">
-                  <p className="font-medium text-lg text-gray-800">{qIdx + 1}. {q.question}</p>
-                  <div className="space-y-2 pl-4">
-                    {q.options.map((opt, oIdx) => (
-                      <button
-                        key={oIdx}
-                        onClick={() => handleQuizSubmit(qIdx, oIdx)}
-                        className={`w-full text-left p-3 rounded-lg border transition-all ${
-                          quizAnswers[qIdx] === oIdx 
-                            ? 'bg-blue-100 border-blue-500 text-blue-800' 
-                            : 'border-gray-200 hover:bg-gray-50'
-                        }`}
-                      >
-                        {opt}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              ))}
-              
-              <button
-                disabled={Object.keys(quizAnswers).length !== quizQuestions.length}
-                onClick={calculateScore}
-                className={`w-full py-4 rounded-xl font-bold text-lg shadow-md transition-all ${
-                  Object.keys(quizAnswers).length === quizQuestions.length
-                    ? 'bg-green-600 text-white hover:bg-green-700 hover:shadow-lg'
-                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                }`}
-              >
-                Hantar Jawapan
-              </button>
-            </>
-          ) : (
-            <div className="text-center space-y-6 animate-fade-in">
-              <div className="inline-block p-6 rounded-full bg-blue-50 mb-4">
-                 <Award size={64} className="text-blue-600" />
-              </div>
-              <h3 className="text-3xl font-bold text-gray-800">Tahniah!</h3>
-              <p className="text-xl text-gray-600">
-                Anda mendapat <span className="font-bold text-blue-600 text-2xl">{quizScore}</span> / {quizQuestions.length} markah.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="border-2 border-gray-100 rounded-xl p-6 hover:border-purple-300 transition-colors">
+              <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mb-4"><Cpu size={24}/></div>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">CPU & Motherboard</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Ini adalah pasangan paling kritikal. CPU Intel perlukan Motherboard Intel (soket LGA1700 dsb). CPU AMD perlukan Motherboard AMD (soket AM4/AM5). Anda tidak boleh mencampur-adukkannya. Periksa generasi soket sebelum membeli.
               </p>
-              
-              <div className="bg-gray-50 p-4 rounded-lg text-left text-sm text-gray-600 max-h-60 overflow-y-auto">
-                <p className="font-bold mb-2">Semakan Jawapan:</p>
-                {quizQuestions.map((q, idx) => (
-                    <div key={idx} className="mb-2 border-b pb-2">
-                        <p className="font-medium">{idx+1}. {q.question}</p>
-                        <p className={quizAnswers[idx] === q.correct ? "text-green-600" : "text-red-500"}>
-                            Jawapan anda: {q.options[quizAnswers[idx]]} 
-                            {quizAnswers[idx] === q.correct ? " (Betul)" : ` (Salah - Jawapan: ${q.options[q.correct]})`}
-                        </p>
-                    </div>
-                ))}
-              </div>
-
-              <button
-                onClick={() => {
-                  setQuizCompleted(false);
-                  setQuizAnswers({});
-                  setQuizScore(0);
-                }}
-                className="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-              >
-                Cuba Lagi
-              </button>
             </div>
-          )}
+
+            <div className="border-2 border-gray-100 rounded-xl p-6 hover:border-purple-300 transition-colors">
+              <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mb-4"><MemoryStick size={24}/></div>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">RAM & Motherboard</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Pastikan sama ada Motherboard anda menyokong DDR4 atau DDR5. Ia tidak "backwards compatible". Kelajuan (MHz) yang dibeli juga tertakluk kepada had maksimum kelajuan yang disokong oleh Motherboard.
+              </p>
+            </div>
+
+            <div className="border-2 border-gray-100 rounded-xl p-6 hover:border-purple-300 transition-colors">
+              <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mb-4"><BatteryCharging size={24}/></div>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">PSU & Komponen (Wattage)</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Kira jumlah penggunaan kuasa (TDP) CPU dan Kad Grafik anda. Sentiasa tambah sekurang-kurangnya 20% - 30% kuasa lebihan pada kapasiti PSU (Headroom). Contoh: Jika sistem guna 400W, beli PSU 550W atau 600W.
+              </p>
+            </div>
+
+            <div className="border-2 border-gray-100 rounded-xl p-6 hover:border-purple-300 transition-colors">
+              <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mb-4"><Monitor size={24}/></div>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Casing (Form Factor)</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Pastikan casing cukup besar untuk memuatkan saiz Motherboard (ATX, Micro-ATX, Mini-ITX). Juga, ukur panjang maksimum Kad Grafik (GPU Clearance) dan ketinggian Kipas CPU (Cooler Clearance).
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <BackButton />
@@ -3285,51 +3259,52 @@ const App = () => {
 
   const renderAR = () => (
     <div className="animate-fade-in w-full">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl overflow-hidden shadow-2xl border border-slate-700">
-          <div className="p-6 sm:p-10 text-white text-center md:text-left flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-bold border border-blue-500/30">
-                <Maximize size={14} /> Ciri 3D / AR Interaktif
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                Asus Z170-P Motherboard 3D
-              </h2>
-              <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                Berinteraksi dengan model 3D di sebelah. Anda boleh <strong className="text-white">memutar (drag)</strong> dan <strong className="text-white">mengezum (scroll)</strong> model ini terus di dalam pelayar web.
-              </p>
-              <div className="bg-slate-800/50 border border-slate-600/50 p-3 rounded-lg mt-4 text-xs text-slate-300">
-                Model ini dikuasakan oleh Sketchfab. Anda boleh tekan ikon skrin penuh (fullscreen) di bawah untuk pengalaman yang lebih jelas.
-              </div>
+      <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+        <div className="bg-blue-500 p-8 text-white flex justify-between items-center">
+          <div>
+            <h2 className="text-3xl font-bold flex items-center gap-3"><Box size={36}/> Model AR & 3D Interaktif</h2>
+            <p className="opacity-90 mt-2 text-lg">Teroka komponen dari pelbagai sudut secara maya.</p>
+          </div>
+          <button 
+            onClick={toggleFullScreen}
+            className="bg-white/20 hover:bg-white/30 p-3 rounded-xl transition-colors backdrop-blur-sm"
+            title="Skrin Penuh"
+          >
+            {isFullscreen ? <Minimize size={24} /> : <Maximize size={24} />}
+          </button>
+        </div>
+        
+        <div 
+          ref={arContainerRef}
+          className={`p-4 bg-gray-900 ${isFullscreen ? 'fixed inset-0 z-50 flex flex-col' : 'relative h-[600px]'}`}
+        >
+          {isFullscreen && (
+            <div className="absolute top-4 right-4 z-50 flex gap-2">
+              <button onClick={toggleFullScreen} className="bg-red-500 text-white p-3 rounded-full hover:bg-red-600 shadow-lg">
+                <Minimize size={24} />
+              </button>
             </div>
+          )}
+          
+          <div className="flex-1 w-full h-full rounded-xl overflow-hidden border border-gray-700 bg-black relative">
+            {/* Embed 3D Model from Sketchfab */}
+            <iframe 
+              title="Gaming PC Build 3D Model" 
+              frameBorder="0" 
+              allowFullScreen 
+              allow="autoplay; fullscreen; xr-spatial-tracking" 
+              src="https://sketchfab.com/models/7fa1853d9e2c451da74d320be26ff018/embed?autostart=1&ui_controls=1&ui_infos=1&ui_inspector=1&ui_stop=0&ui_watermark=1&ui_watermark_link=1"
+              className="w-full h-full outline-none"
+            ></iframe>
             
-            <div className={`flex-1 w-full transition-all duration-300 ${isFullscreen ? 'fixed inset-0 z-50 bg-slate-950 p-4 sm:p-8 flex flex-col items-center justify-center' : 'relative'}`}>
-              <div 
-                ref={arContainerRef} 
-                className={`relative w-full ${isFullscreen ? 'h-full max-w-6xl mx-auto' : 'aspect-square md:aspect-[4/3]'} bg-slate-800 rounded-2xl overflow-hidden border-2 border-slate-700 shadow-[0_0_50px_rgba(59,130,246,0.2)] flex items-center justify-center`}
-              >
-                <iframe 
-                  title="Asus Z170-P Motherboard" 
-                  frameBorder="0" 
-                  allowFullScreen 
-                  allow="autoplay; fullscreen; xr-spatial-tracking" 
-                  src="https://sketchfab.com/models/b998596cfc4945a0bc7b016005c39321/embed"
-                  className="w-full h-full outline-none"
-                ></iframe>
-                
-                <div className="absolute bottom-4 left-4 right-4 bg-slate-900/80 backdrop-blur-md p-3 rounded-xl border border-slate-600 flex items-center justify-between z-20 pointer-events-none">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs font-semibold text-slate-200">Enjin Sketchfab Aktif</span>
-                  </div>
-                  <button 
-                    onClick={toggleFullScreen}
-                    className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold py-1.5 px-3 rounded-lg transition-colors flex items-center gap-1 cursor-pointer pointer-events-auto shadow-md"
-                  >
-                    {isFullscreen ? <Minimize size={12} /> : <Maximize size={12} />}
-                    {isFullscreen ? "Tutup" : "Paparan Penuh"}
-                  </button>
-                </div>
+            <div className="absolute bottom-4 left-4 bg-black/70 text-white px-4 py-2 rounded-lg backdrop-blur-md border border-gray-700/50 flex items-center gap-3 pointer-events-none">
+              <div className="flex gap-2">
+                <div className="w-8 h-8 rounded border border-gray-500 flex items-center justify-center text-xs font-bold">1 K-Click</div>
+                <div className="w-8 h-8 rounded border border-gray-500 flex items-center justify-center text-xs font-bold">Scroll</div>
+              </div>
+              <div className="text-sm">
+                <p className="font-bold">Kawalan Interaktif</p>
+                <p className="text-gray-300 text-xs">Pusing dan Zum untuk melihat susun atur komponen.</p>
               </div>
             </div>
           </div>
@@ -3339,6 +3314,9 @@ const App = () => {
     </div>
   );
 
+  // ==========================================
+  // RENDERER: MAIN APP (STRUKTUR UTAMA & FOOTER)
+  // ==========================================
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-900 overflow-x-hidden flex flex-col">
       <div className="max-w-4xl mx-auto py-4 sm:py-8 px-4 sm:px-0 flex-1 w-full">
@@ -3351,7 +3329,7 @@ const App = () => {
         {view === 'ar' && renderAR()}
       </div>
       
-      {/* --- BAHAGIAN FOOTER --- */}
+      {/* --- BAHAGIAN FOOTER HAK CIPTA --- */}
       <footer className="w-full py-6 mt-auto border-t border-gray-200 bg-white text-center shadow-[0_-5px_15px_-10px_rgba(0,0,0,0.1)] z-10">
         <p className="text-gray-500 text-sm font-semibold tracking-wide">
           Copyright &copy; TKR ADTEC SANDAKAN 2026
