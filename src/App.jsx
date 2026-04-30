@@ -64,7 +64,12 @@ import {
   ThermometerSnowflake,
   Wind,
   Droplets,
-  ShieldAlert
+  ShieldAlert,
+  AppWindow,
+  Terminal,
+  Mouse,
+  Keyboard,
+  Headphones
 } from 'lucide-react';
 
 // ==========================================
@@ -170,6 +175,54 @@ const topics = [
         { title: "Custom Loop Water Cooling", desc: "Sistem penyejukan air tegar yang direka khas dan disambung sendiri oleh pengguna secara manual. Harga premium dan estetik." },
         { title: "Liquid Metal Thermal Paste", desc: "Pes terma berasaskan logam cecair yang mempunyai tahap kekonduksian haba (thermal conductivity) luar biasa berbanding silikon biasa." },
         { title: "Vapor Chamber Technology", desc: "Ruang wap nipis di dalam heatsink laptop berprestasi tinggi yang sangat cekap menyebarkan haba berbanding paip haba tembaga konvensional." }
+      ]
+    }
+  },
+  {
+    id: 'os',
+    title: 'Sistem Operasi (OS)',
+    icon: <AppWindow size={40} />,
+    color: 'bg-indigo-600',
+    description: 'Perisian utama yang menjadi nyawa & pengurus sistem komputer.',
+    content: {
+      basics: [
+        {
+          title: "Definisi & Peranan",
+          points: [
+            "Perisian sistem yang menguruskan perkakasan komputer dan sumber perisian.",
+            "Menyediakan antara muka (GUI atau CLI) antara pengguna dan perkakasan fizikal.",
+            "Contoh popular: Windows (PC), macOS (Apple), Linux (Server), Android/iOS (Telefon)."
+          ]
+        }
+      ], 
+      advanced: [
+        { title: "Seni Bina Kernel", desc: "Teras sistem operasi yang mengawal akses penuh kepada CPU, memori, dan peranti I/O secara langsung." },
+        { title: "Sistem Fail (File System)", desc: "Format logikal untuk menyusun data. Cth: NTFS (Windows), APFS (macOS), ext4 (Linux)." },
+        { title: "Virtualization (Mesin Maya)", desc: "Teknologi yang membenarkan satu komputer fizikal menjalankan beberapa OS berbeza secara serentak (Hypervisor)." }
+      ]
+    }
+  },
+  {
+    id: 'io',
+    title: 'Perkakasan Input & Output',
+    icon: <Mouse size={40} />,
+    color: 'bg-pink-600',
+    description: 'Peralatan luaran untuk berinteraksi dan memaparkan data.',
+    content: {
+      basics: [
+        {
+          title: "Kategori Perkakasan I/O",
+          points: [
+            "Input: Memasukkan arahan/data ke dalam PC (Cth: Papan kekunci, Tetikus, Pengimbas, Mikrofon).",
+            "Output: Memaparkan dan mengeluarkan hasil pemprosesan (Cth: Monitor, Pencetak, Pembesar suara).",
+            "Input & Output (Dwifungsi): Skrin Sentuh, Cermin mata VR."
+          ]
+        }
+      ], 
+      advanced: [
+        { title: "Teknologi Paparan OLED & MicroLED", desc: "Monitor moden dengan piksel yang menyala sendiri, memberikan warna hitam mutlak dan kontras tinggi." },
+        { title: "Kadar Polling (Polling Rate)", desc: "Kelajuan peranti input melapor kedudukan kepada PC (contoh tetikus gaming: 1000Hz hingga 8000Hz)." },
+        { title: "Suis Papan Kekunci Mekanikal", desc: "Suis fizikal individu di bawah setiap kekunci (Linear, Tactile, Clicky) untuk ketepatan dan respons yang laju." }
       ]
     }
   }
@@ -483,6 +536,60 @@ const quizQuestions = [
     question: "Teknologi 'Vapor Chamber' (Ruang Wap) kini banyak digunakan di dalam peranti nipis seperti komputer riba (laptop) prestasi tinggi kerana...",
     options: ["Menjadikan laptop kebal air", "Ia menyebarkan haba secara sekata melalui proses pemeluwapan wap air dalam ruang tembaga nipis", "Ia mengeluarkan wap asap dari belakang laptop", "Ia membuatkan bunyi kipas senyap sepenuhnya"],
     correct: 1
+  },
+  
+  // --- TAMBAHAN 5 SOALAN: SISTEM OPERASI (OS) ---
+  {
+    question: "Apakah fungsi utama sebuah Sistem Operasi (OS) dalam sesebuah komputer?",
+    options: ["Menghasilkan bunyi muzik", "Menguruskan perkakasan komputer, perisian, dan menyediakan antara muka (UI) untuk pengguna", "Melindungi komputer dari habuk fizikal", "Menyejukkan pemproses (CPU)"],
+    correct: 1
+  },
+  {
+    question: "Antara berikut, yang manakah merupakan contoh Sistem Operasi sumber terbuka (Open Source) yang paling popular di dunia pelayan (Server)?",
+    options: ["Microsoft Windows 11", "Apple macOS", "Linux (Contoh: Ubuntu, Debian)", "Microsoft Office"],
+    correct: 2
+  },
+  {
+    question: "Apakah nama perisian teras utama dalam sesebuah sistem operasi yang berhubung terus dengan perkakasan fizikal (CPU & Memori)?",
+    options: ["Antivirus", "Kernel", "Browser", "File Explorer"],
+    correct: 1
+  },
+  {
+    question: "Format Sistem Fail (File System) manakah yang lazimnya dan secara rasmi digunakan oleh sistem operasi Microsoft Windows moden?",
+    options: ["APFS", "ext4", "FAT32", "NTFS"],
+    correct: 3
+  },
+  {
+    question: "Teknologi apakah yang membolehkan anda 'menumpang' dan menjalankan OS Windows di dalam komputer yang menggunakan OS Mac tanpa perlu 'restart' komputer?",
+    options: ["Virtualization (Mesin Maya / Virtual Machine)", "Overclocking", "AirDrop", "Bluetooth"],
+    correct: 0
+  },
+
+  // --- TAMBAHAN 5 SOALAN: PERKAKASAN INPUT/OUTPUT ---
+  {
+    question: "Papan kekunci (Keyboard) dan Tetikus (Mouse) dikategorikan sebagai peranti jenis apa?",
+    options: ["Peranti Output", "Peranti Input", "Peranti Storan", "Peranti Penyejukan"],
+    correct: 1
+  },
+  {
+    question: "Monitor yang menggunakan teknologi piksel menyala dengan sendirinya (tanpa memerlukan lampu latar/backlight) dikenali sebagai teknologi...",
+    options: ["TN Panel", "IPS LCD", "OLED (Organic LED)", "CRT"],
+    correct: 2
+  },
+  {
+    question: "Sebuah Skrin Sentuh (Touch Screen) pada komputer riba dikategorikan sebagai peranti...",
+    options: ["Input sahaja", "Output sahaja", "Input dan Output (Dwifungsi)", "Peranti Rangkaian"],
+    correct: 2
+  },
+  {
+    question: "Bagi peminat e-Sukan, tetikus (mouse) dengan 'Polling Rate' yang sangat tinggi (Contoh: 1000Hz ke atas) dipilih kerana...",
+    options: ["Tetikus akan menjadi lebih berat", "Kelajuan kursor di skrin melapor dan bergerak lebih cepat dengan sifar sela masa (zero delay)", "Mengeluarkan warna RGB yang lebih terang", "Bateri lebih tahan lama"],
+    correct: 1
+  },
+  {
+    question: "Antara berikut, manakah komponen yang BUKAN sebahagian daripada Peranti Output?",
+    options: ["Monitor / Paparan", "Pembesar Suara (Speaker)", "Pengimbas Kod Bar (Barcode Scanner)", "Pencetak (Printer)"],
+    correct: 2
   }
 ];
 
@@ -497,6 +604,7 @@ const App = () => {
   const [quizScore, setQuizScore] = useState(0);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [quizAnswers, setQuizAnswers] = useState({});
+  const [unlockedTopicIndex, setUnlockedTopicIndex] = useState(0); // <-- TAMBAHAN: Untuk jejak progress bacaan pelajar
 
   // State Recommender AI
   const [isRecommenderStarted, setIsRecommenderStarted] = useState(false);
@@ -509,11 +617,20 @@ const App = () => {
   const arContainerRef = useRef(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
+  // --- KESAN AUTOMATIK SKROL KE ATAS ---
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [view, activeTopic]);
+
   // --- Fungsi Modul E-Pembelajaran ---
-  const handleTopicClick = (topic) => {
+  const handleTopicClick = (topic, index) => {
     setActiveTopic(topic);
     setView('topic');
     setActiveTab('basic');
+    // Buka kunci topik seterusnya jika topik ini baru pertama kali dibaca
+    if (index === unlockedTopicIndex) {
+      setUnlockedTopicIndex(prev => prev + 1);
+    }
   };
 
   const handleQuizSubmit = (qIndex, optionIndex) => {
@@ -912,130 +1029,214 @@ const App = () => {
   // ==========================================
   // RENDERER: MENU UTAMA
   // ==========================================
-  const renderMenu = () => (
-    <div className="space-y-6 animate-fade-in pb-10">
-      <header className="text-center bg-gradient-to-r from-blue-900 to-blue-700 text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-           <div className="absolute top-10 right-10 transform rotate-12"><Cpu size={100}/></div>
-           <div className="absolute bottom-5 left-10 transform -rotate-12"><CircuitBoard size={80}/></div>
-        </div>
+  const renderMenu = () => {
+    const progressPercentage = Math.min(100, Math.round((unlockedTopicIndex / topics.length) * 100));
+    const nextTopic = topics[unlockedTopicIndex];
 
-        <div className="relative z-10">
-            <h1 className="text-3xl font-bold mb-2">Modul IKR3013: Computer Hardware & Software</h1>
-            
-            <div className="mt-4 mb-6 inline-block bg-blue-800/50 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-semibold border border-blue-600">
-            E-Learning Interaktif
-            </div>
-            
-            <div className="flex justify-center mt-2">
-                <a 
-                    href="https://drive.google.com/file/d/1Nd_MH4czWND3QX8U-0_N_9TEz4qyI6d3/view?usp=sharing"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 bg-white text-blue-800 rounded-xl font-bold hover:bg-blue-50 hover:scale-105 transition-all shadow-md group"
-                >
-                    <Download size={20} className="group-hover:animate-bounce" />
-                    Muat Turun Nota PDF
-                </a>
-            </div>
-        </div>
-      </header>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 mt-2">
-        {topics.map((topic) => (
-          <button
-            key={topic.id}
-            onClick={() => handleTopicClick(topic)}
-            className="flex items-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-200 border border-gray-100 text-left group relative overflow-hidden"
-          >
-            <div className={`p-4 rounded-lg ${topic.color} text-white mr-4 shadow-sm z-10`}>
-              {topic.icon}
-            </div>
-            <div className="z-10">
-              <h3 className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">{topic.title}</h3>
-              <p className="text-gray-500 text-sm mt-1">{topic.description}</p>
-            </div>
-            <ChevronRight className="ml-auto text-gray-300 group-hover:text-blue-500 z-10" />
-            <div className="absolute right-0 bottom-0 opacity-0 group-hover:opacity-5 transition-opacity pointer-events-none">
-                {topic.icon}
-            </div>
-          </button>
-        ))}
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 mt-6">
-         <button
-            onClick={() => setView('selection')}
-            className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-200 border-t-4 border-t-purple-500 text-center h-full"
-          >
-            <div className="p-3 rounded-full bg-purple-100 text-purple-600 mb-3">
-              <ShoppingCart size={28} />
-            </div>
-            <h3 className="text-lg font-bold text-gray-800">Panduan Pemilihan</h3>
-            <p className="text-gray-500 text-xs mt-1">Tips memilih komponen yang serasi.</p>
-         </button>
-
-         <button
-            onClick={() => setView('inspection')}
-            className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-200 border-t-4 border-t-yellow-400 text-center h-full"
-          >
-            <div className="p-3 rounded-full bg-yellow-100 text-yellow-600 mb-3">
-              <AlertTriangle size={28} />
-            </div>
-            <h3 className="text-lg font-bold text-gray-800">Prosedur Pemeriksaan</h3>
-            <p className="text-gray-500 text-xs mt-1">Keselamatan & penyelenggaraan.</p>
-          </button>
-
-          <button
-            onClick={() => setView('quiz')}
-            className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-200 border-t-4 border-t-green-400 text-center h-full"
-          >
-            <div className="p-3 rounded-full bg-green-100 text-green-600 mb-3">
-              <CheckCircle size={28} />
-            </div>
-            <h3 className="text-lg font-bold text-gray-800">Kuiz Penilaian</h3>
-            <p className="text-gray-500 text-xs mt-1">Uji kefahaman anda.</p>
-          </button>
-
-          <button
-            onClick={() => setView('ar')}
-            className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-200 border-t-4 border-t-blue-500 text-center h-full"
-          >
-            <div className="p-3 rounded-full bg-blue-100 text-blue-600 mb-3">
-              <Box size={28} />
-            </div>
-            <h3 className="text-lg font-bold text-gray-800">Model AR 3D</h3>
-            <p className="text-gray-500 text-xs mt-1">Lihat model interaktif secara nyata.</p>
-          </button>
-      </div>
-
-      {/* BANNER BARU: PENCADANG AI (DIPINDAHKAN KE BAWAH) */}
-      <div className="px-4 mt-8">
-        <div className="bg-gradient-to-r from-slate-900 via-indigo-900 to-blue-900 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between border border-blue-800">
-          <div className="relative z-10 text-center md:text-left mb-6 md:mb-0">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/30 rounded-full text-blue-200 text-xs font-bold mb-3 border border-blue-400/30 backdrop-blur-sm">
-              <Sparkles size={14} /> Ciri Baharu
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">Pakar Perunding AI PC<span className="text-blue-400">Pintar</span></h2>
-            <p className="text-blue-100 max-w-lg text-sm md:text-base opacity-90">Tidak pasti nak beli model apa? Biar AI analisis bajet & kegunaan anda untuk padankan laptop atau PC terbaik dalam masa 60 saat.</p>
+    return (
+      <div className="space-y-6 animate-fade-in pb-10">
+        <header className="text-center bg-gradient-to-r from-blue-900 to-blue-700 text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+             <div className="absolute top-10 right-10 transform rotate-12"><Cpu size={100}/></div>
+             <div className="absolute bottom-5 left-10 transform -rotate-12"><CircuitBoard size={80}/></div>
           </div>
-          <button
-            onClick={() => {
-              setView('recommender');
-              setIsRecommenderStarted(false);
-            }}
-            className="group relative z-10 bg-white text-blue-900 px-8 py-4 rounded-xl font-bold hover:bg-blue-50 hover:scale-105 transition-all shadow-[0_0_30px_rgba(59,130,246,0.3)] flex items-center gap-3 whitespace-nowrap"
-          >
-            <Sparkles size={20} className="text-blue-600" /> Mula Analisis Percuma
-            <ChevronRight className="group-hover:translate-x-1 transition-transform" />
-          </button>
-          
-          <div className="absolute right-0 top-0 w-64 h-64 bg-blue-500 opacity-20 blur-3xl rounded-full translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
-          <div className="absolute -left-10 bottom-0 w-40 h-40 bg-indigo-500 opacity-30 blur-2xl rounded-full pointer-events-none"></div>
+
+          <div className="relative z-10">
+              <h1 className="text-3xl font-bold mb-2">Modul IKR3013: Computer Hardware & Software</h1>
+              
+              <div className="mt-4 mb-6 inline-block bg-blue-800/50 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-semibold border border-blue-600">
+              E-Learning Interaktif
+              </div>
+              
+              <div className="flex justify-center mt-2">
+                  <a 
+                      href="https://drive.google.com/drive/folders/1R0fi3x5-TLLOHDClZDU-Mnh89UKeZfeS?usp=sharing"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-3 bg-white text-blue-800 rounded-xl font-bold hover:bg-blue-50 hover:scale-105 transition-all shadow-md group"
+                  >
+                      <Download size={20} className="group-hover:animate-bounce" />
+                      Muat Turun Nota PDF
+                  </a>
+              </div>
+          </div>
+        </header>
+
+        {/* --- PROGRESS BAR PEMBELAJARAN --- */}
+        <div className={`px-4 mt-4 transition-all duration-500 ${progressPercentage < 100 ? 'sticky top-4 z-40' : ''}`}>
+          <div className="bg-white/90 backdrop-blur-md p-5 sm:p-6 rounded-2xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.15)] border border-white/50 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 opacity-50 rounded-full blur-2xl pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
+            
+            <div className="flex justify-between items-end mb-3 relative z-10">
+              <div>
+                <h3 className="font-bold text-slate-800 flex items-center gap-2 text-lg">
+                  <Award className="text-amber-500" size={24} /> Prestasi Bacaan Anda
+                </h3>
+                <p className="text-sm text-slate-500 mt-1">
+                  {unlockedTopicIndex < topics.length 
+                    ? <span className="flex items-center gap-1.5"><ChevronRight size={16} className="text-blue-500"/> Sila baca urutan seterusnya: <strong className="text-blue-600">{nextTopic?.title}</strong></span> 
+                    : <span className="flex items-center gap-1.5 text-green-600 font-bold"><CheckCircle size={16}/> Selesai! Anda kini boleh menjawab Kuiz Penilaian.</span>}
+                </p>
+              </div>
+              <div className="text-right">
+                <span className="font-black text-blue-600 text-3xl">{progressPercentage}%</span>
+              </div>
+            </div>
+            
+            <div className="w-full bg-slate-100 rounded-full h-4 mb-2 overflow-hidden shadow-inner relative z-10">
+              <div 
+                className="bg-gradient-to-r from-blue-500 to-cyan-400 h-4 rounded-full transition-all duration-1000 ease-out relative" 
+                style={{ width: `${progressPercentage}%` }}
+              >
+                 {/* ANIMASI BERHENTI BILA 100% */}
+                 {progressPercentage < 100 && (
+                   <div className="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-r from-transparent via-white/30 to-transparent w-full animate-[shimmer_1.5s_infinite]"></div>
+                 )}
+              </div>
+            </div>
+            
+            <div className="flex justify-between text-xs font-bold text-slate-400 relative z-10">
+              <span>Mula</span>
+              <span>{unlockedTopicIndex} daripada {topics.length} Topik Dibaca</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 mt-6">
+          {topics.map((topic, index) => {
+            const isLocked = index > unlockedTopicIndex;
+            const isCompleted = index < unlockedTopicIndex;
+            
+            return (
+              <button
+                key={topic.id}
+                onClick={() => !isLocked && handleTopicClick(topic, index)}
+                className={`flex items-center p-6 bg-white rounded-xl shadow-md transition-all duration-200 border text-left group relative overflow-hidden ${
+                  isLocked 
+                    ? 'opacity-60 cursor-not-allowed border-gray-200' 
+                    : 'hover:shadow-xl hover:scale-[1.02] border-gray-100'
+                }`}
+              >
+                {isCompleted && (
+                  <div className="absolute top-3 right-3 text-green-500 bg-green-50 rounded-full p-1 shadow-sm border border-green-100 z-20" title="Selesai Dibaca">
+                    <Check size={16} strokeWidth={3} />
+                  </div>
+                )}
+                <div className={`p-4 rounded-lg ${isLocked ? 'bg-gray-300' : topic.color} text-white mr-4 shadow-sm z-10`}>
+                  {isLocked ? <Lock size={40} /> : topic.icon}
+                </div>
+                <div className="z-10 flex-1 pr-6">
+                  <h3 className={`text-xl font-bold ${isLocked ? 'text-gray-500' : 'text-gray-800 group-hover:text-blue-600'} transition-colors`}>
+                    {topic.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm mt-1">
+                    {isLocked ? 'Kunci: Baca topik sebelumnya dahulu' : topic.description}
+                  </p>
+                </div>
+                {!isLocked && <ChevronRight className="ml-auto text-gray-300 group-hover:text-blue-500 z-10" />}
+                {isLocked && <Lock className="ml-auto text-gray-400 z-10" />}
+                {!isLocked && (
+                  <div className="absolute right-0 bottom-0 opacity-0 group-hover:opacity-5 transition-opacity pointer-events-none">
+                      {topic.icon}
+                  </div>
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 mt-6">
+           <button
+              onClick={() => setView('selection')}
+              className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-200 border-t-4 border-t-purple-500 text-center h-full"
+            >
+              <div className="p-3 rounded-full bg-purple-100 text-purple-600 mb-3">
+                <ShoppingCart size={28} />
+              </div>
+              <h3 className="text-lg font-bold text-gray-800">Panduan Pemilihan</h3>
+              <p className="text-gray-500 text-xs mt-1">Tips memilih komponen yang serasi.</p>
+           </button>
+
+           <button
+              onClick={() => setView('inspection')}
+              className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-200 border-t-4 border-t-yellow-400 text-center h-full"
+            >
+              <div className="p-3 rounded-full bg-yellow-100 text-yellow-600 mb-3">
+                <AlertTriangle size={28} />
+              </div>
+              <h3 className="text-lg font-bold text-gray-800">Prosedur Pemeriksaan</h3>
+              <p className="text-gray-500 text-xs mt-1">Keselamatan & penyelenggaraan.</p>
+            </button>
+
+            <button
+              onClick={() => {
+                const isQuizLocked = unlockedTopicIndex < topics.length;
+                if (!isQuizLocked) setView('quiz');
+              }}
+              className={`relative flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md transition-all duration-300 border-t-4 text-center h-full ${
+                unlockedTopicIndex < topics.length 
+                  ? 'opacity-60 cursor-not-allowed border-t-gray-400' 
+                  : !quizCompleted
+                    ? 'hover:shadow-xl hover:scale-[1.02] border-t-green-500 ring-2 ring-green-400/50 ring-offset-2'
+                    : 'hover:shadow-xl hover:scale-[1.02] border-t-green-400'
+              }`}
+            >
+              {/* NOTIFIKASI LENCANA ANIMASI */}
+              {unlockedTopicIndex >= topics.length && !quizCompleted && (
+                <div className="absolute -top-3 -right-2 bg-red-500 text-white text-[11px] font-black px-4 py-1.5 rounded-full shadow-lg border-2 border-white animate-bounce z-20">
+                  MULA MENJAWAB!
+                </div>
+              )}
+              
+              <div className={`p-3 rounded-full mb-3 ${unlockedTopicIndex < topics.length ? 'bg-gray-100 text-gray-500' : 'bg-green-100 text-green-600'}`}>
+                {unlockedTopicIndex < topics.length ? <Lock size={28} /> : <CheckCircle size={28} />}
+              </div>
+              <h3 className="text-lg font-bold text-gray-800">Kuiz Penilaian</h3>
+              <p className="text-gray-500 text-xs mt-1">
+                {unlockedTopicIndex < topics.length ? 'Kunci: Baca semua topik dahulu' : 'Uji kefahaman anda.'}
+              </p>
+            </button>
+
+            <button
+              onClick={() => setView('ar')}
+              className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-200 border-t-4 border-t-blue-500 text-center h-full"
+            >
+              <div className="p-3 rounded-full bg-blue-100 text-blue-600 mb-3">
+                <Box size={28} />
+              </div>
+              <h3 className="text-lg font-bold text-gray-800">Model AR 3D</h3>
+              <p className="text-gray-500 text-xs mt-1">Lihat model interaktif secara nyata.</p>
+            </button>
+        </div>
+
+        {/* BANNER BARU: PENCADANG AI (DIPINDAHKAN KE BAWAH) */}
+        <div className="px-4 mt-8">
+          <div className="bg-gradient-to-r from-slate-900 via-indigo-900 to-blue-900 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between border border-blue-800">
+            <div className="relative z-10 text-center md:text-left mb-6 md:mb-0">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/30 rounded-full text-blue-200 text-xs font-bold mb-3 border border-blue-400/30 backdrop-blur-sm">
+                <Sparkles size={14} /> Ciri Baharu
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">Pakar Perunding AI PC<span className="text-blue-400">Pintar</span></h2>
+              <p className="text-blue-100 max-w-lg text-sm md:text-base opacity-90">Tidak pasti nak beli model apa? Biar AI analisis bajet & kegunaan anda untuk padankan laptop atau PC terbaik dalam masa 60 saat.</p>
+            </div>
+            <button
+              onClick={() => {
+                setView('recommender');
+                setIsRecommenderStarted(false);
+              }}
+              className="group relative z-10 bg-white text-blue-900 px-8 py-4 rounded-xl font-bold hover:bg-blue-50 hover:scale-105 transition-all shadow-[0_0_30px_rgba(59,130,246,0.3)] flex items-center gap-3 whitespace-nowrap"
+            >
+              <Sparkles size={20} className="text-blue-600" /> Mula Analisis Percuma
+              <ChevronRight className="group-hover:translate-x-1 transition-transform" />
+            </button>
+            
+            <div className="absolute right-0 top-0 w-64 h-64 bg-blue-500 opacity-20 blur-3xl rounded-full translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
+            <div className="absolute -left-10 bottom-0 w-40 h-40 bg-indigo-500 opacity-30 blur-2xl rounded-full pointer-events-none"></div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   // ==========================================
   // RENDERER: RECOMMENDER AI (PENCADANG PC)
@@ -1047,8 +1248,8 @@ const App = () => {
         <div className="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-blue-200 flex flex-col w-full relative">
           <nav className="bg-white px-4 md:px-6 py-4 shadow-sm flex justify-between items-center z-10">
             <div className="flex items-center gap-2 md:gap-4">
-              <button onClick={() => setView('menu')} className="text-slate-500 hover:text-blue-600 transition-colors flex items-center gap-1 font-medium text-sm md:text-base">
-                <ArrowLeft size={20} /> <span className="hidden md:inline">Modul Pembelajaran</span>
+              <button onClick={() => setView('menu')} className="inline-flex items-center gap-2 text-gray-600 bg-gray-100 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-xl transition-all text-sm font-bold border border-gray-200">
+                <Home size={18} /> <span className="hidden md:inline">Menu Utama</span>
               </button>
               <div className="w-px h-6 bg-slate-200 mx-2 hidden md:block"></div>
               <div className="flex items-center gap-2 text-blue-700 font-extrabold text-xl tracking-tight">
@@ -1112,32 +1313,32 @@ const App = () => {
   
                 <div className="bg-slate-50 p-8 rounded-2xl text-center border border-slate-100 hover:shadow-lg transition-shadow">
                   <div className="bg-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-green-600">
-                    <ShieldCheck size={32} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">3. Dapat 10 Cadangan</h3>
-                  <p className="text-slate-500">Terima senarai 10 model terbaik yang disusun dari harga murah ke mahal.</p>
+                  <ShieldCheck size={32} />
                 </div>
+                <h3 className="text-xl font-bold mb-3">3. Dapat 10 Cadangan</h3>
+                <p className="text-slate-500">Terima senarai 10 model terbaik yang disusun dari harga murah ke mahal.</p>
               </div>
             </div>
-          </section>
-        </div>
-      );
-    }
-
-    // 2. Wizard & Result Recommender
-    return (
-      <div className="bg-slate-50 font-sans text-slate-800 flex flex-col items-center selection:bg-blue-200">
-        <div className="w-full flex justify-between items-center mb-6">
-          <button onClick={exitRecommender} className="text-slate-500 hover:text-blue-700 flex items-center gap-2 font-medium transition-colors">
-            <Home size={18} /> Menu Utama
-          </button>
-          <div className="flex items-center gap-2 text-slate-400 font-bold text-lg">
-            <Cpu size={20} /> PC<span className="text-slate-600">Pintar</span> AI
           </div>
+        </section>
+      </div>
+    );
+  }
+
+  // 2. Wizard & Result Recommender
+  return (
+    <div className="bg-slate-50 font-sans text-slate-800 flex flex-col items-center selection:bg-blue-200 pt-2">
+      <div className="w-full flex justify-between items-center mb-6 px-1">
+        <button onClick={exitRecommender} className="inline-flex items-center gap-2 text-gray-600 bg-white hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-xl transition-all text-sm font-bold border border-gray-200 shadow-sm">
+          <Home size={18} /> <span className="hidden sm:inline">Menu Utama</span>
+        </button>
+        <div className="flex items-center gap-2 text-slate-400 font-bold text-lg">
+          <Cpu size={20} /> PC<span className="text-slate-600">Pintar</span> AI
         </div>
-  
-        <div className="w-full bg-white rounded-3xl shadow-xl overflow-hidden ring-1 ring-slate-100">
-          <div className="bg-gradient-to-r from-blue-700 to-indigo-800 p-6 text-white text-center">
+      </div>
+
+      <div className="w-full bg-white rounded-3xl shadow-xl overflow-hidden ring-1 ring-slate-100">
+        <div className="bg-gradient-to-r from-blue-700 to-indigo-800 p-6 text-white text-center">
             <h1 className="text-2xl font-bold flex items-center justify-center gap-2">
               <Sparkles className="text-yellow-300" /> Sesi Konsultasi AI
             </h1>
@@ -1374,13 +1575,18 @@ const App = () => {
   const renderTopic = () => (
     <div className="animate-fade-in w-full">
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-        <div className={`${activeTopic.color} p-8 text-white flex items-center justify-between`}>
-          <div>
+        <div className={`${activeTopic.color} p-8 text-white relative`}>
+          <div className="flex justify-between items-start mb-4">
+            <button onClick={() => { setView('menu'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="inline-flex items-center gap-2 text-white bg-black/10 hover:bg-black/20 px-4 py-2 rounded-xl transition-all text-sm font-bold backdrop-blur-sm shadow-sm border border-white/10">
+              <Home size={18} /> Menu Utama
+            </button>
+            <div className="hidden md:block opacity-20 transform scale-150 absolute right-8 top-12 pointer-events-none">
+              {activeTopic.icon}
+            </div>
+          </div>
+          <div className="relative z-10">
             <h2 className="text-3xl font-bold">{activeTopic.title}</h2>
             <p className="opacity-90 mt-2 text-lg">{activeTopic.description}</p>
-          </div>
-          <div className="hidden md:block opacity-20 transform scale-150">
-            {activeTopic.icon}
           </div>
         </div>
 
@@ -3051,6 +3257,200 @@ const App = () => {
                   </div>
                 </div>
               )}
+
+              {/* OS CUSTOM INFOGRAPHICS */}
+              {activeTopic.id === 'os' && (
+                <div className="space-y-8 mt-8">
+                  <div className="p-6 lg:p-8 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                    <div className="text-center mb-8">
+                      <span className="inline-block py-1 px-3 rounded-full bg-indigo-100 text-indigo-700 font-bold text-xs mb-2 tracking-widest uppercase">Perisian Utama</span>
+                      <h4 className="font-bold text-slate-800 text-2xl flex items-center justify-center gap-2">
+                        <AppWindow className="text-indigo-500" size={24}/> Kategori Sistem Operasi
+                      </h4>
+                      <p className="text-slate-500 text-sm mt-2 max-w-2xl mx-auto">Kenali 'nyawa' di sebalik komponen fizikal. Tanpa Sistem Operasi, komputer hanyalah sekeping logam yang tidak berfungsi.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-blue-400 transition-all text-center group">
+                        <div className="bg-blue-100 text-blue-600 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                          <AppWindow size={32}/>
+                        </div>
+                        <h5 className="font-bold text-slate-800 text-lg mb-2">Microsoft Windows</h5>
+                        <p className="text-sm text-slate-600 leading-relaxed mb-4">Sistem operasi paling popular di dunia untuk PC Desktop. Sangat mendominasi industri kerja pejabat dan e-Sukan (Gaming) dengan sokongan perisian terbanyak.</p>
+                        <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-bold">Cth: Windows 11</span>
+                      </div>
+
+                      <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-slate-800 transition-all text-center group">
+                        <div className="bg-slate-200 text-slate-800 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                          <Monitor size={32}/>
+                        </div>
+                        <h5 className="font-bold text-slate-800 text-lg mb-2">Apple macOS</h5>
+                        <p className="text-sm text-slate-600 leading-relaxed mb-4">Sistem operasi eksklusif untuk komputer keluaran Apple (MacBook / iMac). Terkenal dengan kestabilan, keselamatan tinggi, dan pilihan utama industri kreatif & pereka.</p>
+                        <span className="text-xs bg-slate-200 text-slate-800 px-3 py-1 rounded-full font-bold">Cth: macOS Sonoma</span>
+                      </div>
+
+                      <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-orange-400 transition-all text-center group">
+                        <div className="bg-orange-100 text-orange-600 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                          <Terminal size={32}/>
+                        </div>
+                        <h5 className="font-bold text-slate-800 text-lg mb-2">Linux (Open Source)</h5>
+                        <p className="text-sm text-slate-600 leading-relaxed mb-4">Sistem berasaskan sumber terbuka yang percuma. Sangat kebal dari virus. Pilihan nombor 1 untuk komputer Pelayan (Server) dan pakar teknologi IT (Programmer).</p>
+                        <span className="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-bold">Cth: Ubuntu, Kali Linux</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* INFOGRAFIK FRESH INSTALL WINDOWS */}
+                  <div className="p-6 lg:p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 shadow-sm relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-40 blur-3xl rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+                    
+                    <div className="text-center mb-10 relative z-10">
+                      <span className="inline-block py-1 px-3 rounded-full bg-blue-200 text-blue-800 font-bold text-xs mb-3 tracking-widest uppercase">Panduan Praktikal</span>
+                      <h4 className="font-bold text-slate-800 text-2xl flex items-center justify-center gap-2">
+                        <Download className="text-blue-600" size={26}/> Langkah "Fresh Install" Windows 10 / 11
+                      </h4>
+                      <p className="text-slate-600 text-sm mt-2 max-w-2xl mx-auto">Cara rasmi dan paling bersih untuk memasang semula sistem operasi Windows pada PC atau Laptop anda menggunakan pemacu USB (Pendrive).</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
+                      {/* Step 1 */}
+                      <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm relative hover:-translate-y-1 hover:shadow-md transition-all text-center">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-black text-sm border-2 border-white shadow-sm">1</div>
+                        <div className="text-blue-500 mb-3 mt-2 bg-blue-50 w-12 h-12 mx-auto flex items-center justify-center rounded-xl">
+                          <Globe size={24} />
+                        </div>
+                        <h5 className="font-bold text-slate-800 text-sm mb-2">Muat Turun</h5>
+                        <p className="text-xs text-slate-600 leading-relaxed">
+                          Laman rasmi Microsoft muat turun <strong>Media Creation Tool</strong>.
+                        </p>
+                      </div>
+                      
+                      {/* Step 2 */}
+                      <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm relative hover:-translate-y-1 hover:shadow-md transition-all text-center">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-black text-sm border-2 border-white shadow-sm">2</div>
+                        <div className="text-blue-500 mb-3 mt-2 bg-blue-50 w-12 h-12 mx-auto flex items-center justify-center rounded-xl">
+                          <Usb size={24} />
+                        </div>
+                        <h5 className="font-bold text-slate-800 text-sm mb-2">Bina Bootable USB</h5>
+                        <p className="text-xs text-slate-600 leading-relaxed">
+                          Pilih "Create media" pada <strong>Pendrive (min 8GB)</strong>.
+                        </p>
+                      </div>
+
+                      {/* Step 3 */}
+                      <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm relative hover:-translate-y-1 hover:shadow-md transition-all text-center">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-black text-sm border-2 border-white shadow-sm">3</div>
+                        <div className="text-blue-500 mb-3 mt-2 bg-blue-50 w-12 h-12 mx-auto flex items-center justify-center rounded-xl">
+                          <Settings size={24} />
+                        </div>
+                        <h5 className="font-bold text-slate-800 text-sm mb-2">Tetapan BIOS</h5>
+                        <p className="text-xs text-slate-600 leading-relaxed">
+                          Cucuk USB & hidupkan PC. Tekan <strong>F2/DEL</strong> masuk BIOS. Tukar Boot ke USB.
+                        </p>
+                      </div>
+
+                      {/* Step 4 */}
+                      <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm relative hover:-translate-y-1 hover:shadow-md transition-all text-center">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-black text-sm border-2 border-white shadow-sm">4</div>
+                        <div className="text-blue-500 mb-3 mt-2 bg-blue-50 w-12 h-12 mx-auto flex items-center justify-center rounded-xl">
+                          <HardDrive size={24} />
+                        </div>
+                        <h5 className="font-bold text-slate-800 text-sm mb-2">Format & Custom</h5>
+                        <p className="text-xs text-slate-600 leading-relaxed">
+                          Pilih <strong>Custom Install</strong>. "Delete" partition OS lama hingga Unallocated.
+                        </p>
+                      </div>
+
+                      {/* Step 5 */}
+                      <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm relative hover:-translate-y-1 hover:shadow-md transition-all text-center">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-black text-sm border-2 border-white shadow-sm">5</div>
+                        <div className="text-emerald-500 mb-3 mt-2 bg-emerald-50 w-12 h-12 mx-auto flex items-center justify-center rounded-xl">
+                          <CheckCircle size={24} />
+                        </div>
+                        <h5 className="font-bold text-slate-800 text-sm mb-2">Tunggu & Siap</h5>
+                        <p className="text-xs text-slate-600 leading-relaxed">
+                          Klik Next. PC akan <strong>Restart</strong>. Siap untuk digunakan!
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* YouTube Video Embed Block untuk Pemasangan Windows */}
+                    <div className="mt-10 mb-4 bg-slate-900 p-5 sm:p-6 rounded-2xl shadow-lg border border-slate-800 relative z-10">
+                      <div className="flex items-center gap-3 mb-5">
+                        <div className="bg-red-600/20 p-2 rounded-lg">
+                          <MonitorPlay className="text-red-500" size={28} />
+                        </div>
+                        <div>
+                          <h5 className="font-bold text-white text-lg leading-tight">Video Rujukan Praktikal</h5>
+                          <p className="text-slate-400 text-xs">Tutorial langkah demi langkah "Fresh Install" Windows.</p>
+                        </div>
+                      </div>
+                      <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-slate-700 bg-black shadow-inner">
+                        <iframe 
+                          className="absolute top-0 left-0 w-full h-full"
+                          src="https://www.youtube.com/embed/v4hHQrivf-k?si=A6q9GB-NtmsDuQAu" 
+                          title="Tutorial Format PC & Install Windows" 
+                          frameBorder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 bg-blue-600/10 border border-blue-200 rounded-xl p-4 flex gap-4 items-start z-10 relative">
+                       <AlertTriangle size={24} className="text-blue-600 shrink-0 mt-0.5" />
+                       <p className="text-sm text-blue-900 font-medium leading-relaxed"><strong>Amaran Penting:</strong> Proses 'Fresh Install' (Format) akan memadam <strong>KESEMUA data</strong> (gambar, dokumen, perisian) di dalam Pemacu C (Local Disk C:). Pastikan anda telah membuat salinan sandaran (Backup) fail-fail penting ke dalam Pendrive atau Hard Disk Luaran lain sebelum memulakan langkah di atas!</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* INPUT/OUTPUT CUSTOM INFOGRAPHICS */}
+              {activeTopic.id === 'io' && (
+                <div className="space-y-8 mt-8">
+                  <div className="p-6 lg:p-8 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                    <div className="text-center mb-8">
+                      <span className="inline-block py-1 px-3 rounded-full bg-pink-100 text-pink-700 font-bold text-xs mb-2 tracking-widest uppercase">Luar & Dalam</span>
+                      <h4 className="font-bold text-slate-800 text-2xl flex items-center justify-center gap-2">
+                        <ArrowRightLeft className="text-pink-500" size={24}/> Klasifikasi Input & Output
+                      </h4>
+                      <p className="text-slate-500 text-sm mt-2 max-w-2xl mx-auto">Komputer perlu berkomunikasi dengan dunia luar. Terdapat 3 kategori utama untuk membolehkan komunikasi ini berlaku.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative shadow-sm hover:border-pink-300 transition-colors">
+                        <div className="absolute top-0 right-0 bg-pink-500 text-white font-bold text-xs px-3 py-1 rounded-bl-lg">Memasukkan Data</div>
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="bg-pink-100 p-2.5 rounded-lg text-pink-600"><Keyboard size={24}/></div>
+                          <h5 className="font-black text-lg text-slate-800">Peranti Input</h5>
+                        </div>
+                        <p className="text-sm text-slate-600 mb-4">Alat untuk pengguna memberi arahan atau memasukkan data ke dalam sistem pengiraan komputer.</p>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="text-xs font-medium border border-slate-200 bg-white px-2 py-1 rounded flex items-center gap-1"><Keyboard size={12}/> Papan Kekunci</span>
+                          <span className="text-xs font-medium border border-slate-200 bg-white px-2 py-1 rounded flex items-center gap-1"><Mouse size={12}/> Tetikus</span>
+                          <span className="text-xs font-medium border border-slate-200 bg-white px-2 py-1 rounded flex items-center gap-1"><Volume2 size={12}/> Mikrofon</span>
+                        </div>
+                      </div>
+
+                      <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative shadow-sm hover:border-teal-300 transition-colors">
+                        <div className="absolute top-0 right-0 bg-teal-500 text-white font-bold text-xs px-3 py-1 rounded-bl-lg">Memaparkan Maklumat</div>
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="bg-teal-100 p-2.5 rounded-lg text-teal-600"><Monitor size={24}/></div>
+                          <h5 className="font-black text-lg text-slate-800">Peranti Output</h5>
+                        </div>
+                        <p className="text-sm text-slate-600 mb-4">Menterjemahkan kod logikal dan data komputer menjadi sesuatu yang boleh difahami oleh pancaindera manusia (visual, audio).</p>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="text-xs font-medium border border-slate-200 bg-white px-2 py-1 rounded flex items-center gap-1"><Monitor size={12}/> Skrin/Monitor</span>
+                          <span className="text-xs font-medium border border-slate-200 bg-white px-2 py-1 rounded flex items-center gap-1"><Headphones size={12}/> Headphone</span>
+                          <span className="text-xs font-medium border border-slate-200 bg-white px-2 py-1 rounded flex items-center gap-1"><Printer size={12}/> Pencetak</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-slide-up">
@@ -3086,11 +3486,16 @@ const App = () => {
     <div className="animate-fade-in">
       {!quizCompleted ? (
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-          <div className="flex items-center justify-between mb-8 border-b border-gray-100 pb-6">
-            <h2 className="text-3xl font-bold flex items-center gap-3">
-              <CheckCircle className="text-green-500" size={32}/> Kuiz Penilaian
-            </h2>
-            <span className="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full font-bold text-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 border-b border-gray-100 pb-6 gap-4">
+            <div>
+              <button onClick={() => { setView('menu'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="mb-4 inline-flex items-center gap-2 text-gray-600 bg-gray-100 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-xl transition-all text-sm font-bold border border-gray-200">
+                <Home size={18} /> Menu Utama
+              </button>
+              <h2 className="text-3xl font-bold flex items-center gap-3">
+                <CheckCircle className="text-green-500" size={32}/> Kuiz Penilaian
+              </h2>
+            </div>
+            <span className="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full font-bold text-sm h-fit">
               {Object.keys(quizAnswers).length} / {quizQuestions.length} Menjawab
             </span>
           </div>
@@ -3170,7 +3575,10 @@ const App = () => {
   const renderInspection = () => (
     <div className="animate-fade-in w-full">
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-        <div className="bg-yellow-500 p-8 text-white">
+        <div className="bg-yellow-500 p-8 text-white relative">
+          <button onClick={() => { setView('menu'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="mb-4 inline-flex items-center gap-2 text-white bg-black/10 hover:bg-black/20 px-4 py-2 rounded-xl transition-all text-sm font-bold backdrop-blur-sm border border-white/20">
+            <Home size={18} /> Menu Utama
+          </button>
           <h2 className="text-3xl font-bold flex items-center gap-3"><AlertTriangle size={36}/> Prosedur Pemeriksaan & Penyelenggaraan</h2>
           <p className="opacity-90 mt-2 text-lg">Langkah keselamatan dan amalan terbaik sebelum, semasa, dan selepas mengendalikan perkakasan.</p>
         </div>
@@ -3211,7 +3619,10 @@ const App = () => {
   const renderSelectionGuide = () => (
     <div className="animate-fade-in w-full">
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-        <div className="bg-purple-600 p-8 text-white">
+        <div className="bg-purple-600 p-8 text-white relative">
+          <button onClick={() => { setView('menu'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="mb-4 inline-flex items-center gap-2 text-white bg-black/10 hover:bg-black/20 px-4 py-2 rounded-xl transition-all text-sm font-bold backdrop-blur-sm border border-white/20">
+            <Home size={18} /> Menu Utama
+          </button>
           <h2 className="text-3xl font-bold flex items-center gap-3"><ShoppingCart size={36}/> Panduan Pemilihan & Keserasian</h2>
           <p className="opacity-90 mt-2 text-lg">Bagaimana untuk memilih komponen yang serasi antara satu sama lain.</p>
         </div>
@@ -3257,17 +3668,20 @@ const App = () => {
   );
 
   const renderAR = () => (
-    <div className="animate-fade-in w-full">
-      <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-        <div className="bg-blue-500 p-8 text-white flex justify-between items-center">
+    <div className={`w-full ${isFullscreen ? '' : 'animate-fade-in'}`}>
+      <div className={`bg-white rounded-2xl shadow-xl border border-gray-100 ${isFullscreen ? '' : 'overflow-hidden'}`}>
+        <div className="bg-blue-500 p-8 text-white flex justify-between items-start">
           <div>
+            <button onClick={() => { setView('menu'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="mb-4 inline-flex items-center gap-2 text-white bg-black/10 hover:bg-black/20 px-4 py-2 rounded-xl transition-all text-sm font-bold backdrop-blur-sm border border-white/20">
+              <Home size={18} /> Menu Utama
+            </button>
             <h2 className="text-3xl font-bold flex items-center gap-3"><Box size={36}/> Model AR & 3D Interaktif</h2>
             <p className="opacity-90 mt-2 text-lg">Teroka komponen dari pelbagai sudut secara maya.</p>
           </div>
           <button 
             onClick={toggleFullScreen}
-            className="bg-white/20 hover:bg-white/30 p-3 rounded-xl transition-colors backdrop-blur-sm"
-            title="Skrin Penuh"
+            className="bg-white/20 hover:bg-white/30 p-3 rounded-xl transition-colors backdrop-blur-sm mt-12 sm:mt-0"
+            title={isFullscreen ? "Keluar Skrin Penuh" : "Skrin Penuh"}
           >
             {isFullscreen ? <Minimize size={24} /> : <Maximize size={24} />}
           </button>
@@ -3275,31 +3689,31 @@ const App = () => {
         
         <div 
           ref={arContainerRef}
-          className={`p-4 bg-gray-900 ${isFullscreen ? 'fixed inset-0 z-50 flex flex-col' : 'relative h-[600px]'}`}
+          className={`bg-gray-900 transition-all duration-300 ${isFullscreen ? 'fixed inset-0 z-[9999] flex flex-col p-0 sm:p-4' : 'relative h-[600px] p-4'}`}
         >
           {isFullscreen && (
             <div className="absolute top-4 right-4 z-50 flex gap-2">
-              <button onClick={toggleFullScreen} className="bg-red-500 text-white p-3 rounded-full hover:bg-red-600 shadow-lg">
-                <Minimize size={24} />
+              <button onClick={toggleFullScreen} className="bg-red-500 text-white px-5 py-3 rounded-full hover:bg-red-600 shadow-lg flex items-center gap-2 font-bold text-sm transition-transform hover:scale-105">
+                <Minimize size={20} /> Tutup Paparan
               </button>
             </div>
           )}
           
-          <div className="flex-1 w-full h-full rounded-xl overflow-hidden border border-gray-700 bg-black relative">
+          <div className={`flex-1 w-full h-full bg-black relative ${isFullscreen ? 'rounded-none sm:rounded-xl' : 'rounded-xl overflow-hidden border border-gray-700'}`}>
             {/* Embed 3D Model from Sketchfab */}
             <iframe 
-              title="Gaming PC Build 3D Model" 
-              frameBorder="0" 
-              allowFullScreen 
+              title="Asus Z170-P Motherboard" 
+              style={{ border: 0 }}
+              allowFullScreen={true}
               allow="autoplay; fullscreen; xr-spatial-tracking" 
-              src="https://sketchfab.com/models/7fa1853d9e2c451da74d320be26ff018/embed?autostart=1&ui_controls=1&ui_infos=1&ui_inspector=1&ui_stop=0&ui_watermark=1&ui_watermark_link=1"
+              src="https://sketchfab.com/models/b998596cfc4945a0bc7b016005c39321/embed?autostart=1&ui_controls=1&ui_infos=1&ui_inspector=1&ui_stop=0&ui_watermark=1&ui_watermark_link=1"
               className="w-full h-full outline-none"
             ></iframe>
             
             <div className="absolute bottom-4 left-4 bg-black/70 text-white px-4 py-2 rounded-lg backdrop-blur-md border border-gray-700/50 flex items-center gap-3 pointer-events-none">
               <div className="flex gap-2">
-                <div className="w-8 h-8 rounded border border-gray-500 flex items-center justify-center text-xs font-bold">1 K-Click</div>
-                <div className="w-8 h-8 rounded border border-gray-500 flex items-center justify-center text-xs font-bold">Scroll</div>
+                <div className="w-auto px-2 h-8 rounded border border-gray-500 flex items-center justify-center text-xs font-bold">Klik & Tarik</div>
+                <div className="w-auto px-2 h-8 rounded border border-gray-500 flex items-center justify-center text-xs font-bold">Zum</div>
               </div>
               <div className="text-sm">
                 <p className="font-bold">Kawalan Interaktif</p>
@@ -3309,7 +3723,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <BackButton />
+      {!isFullscreen && <BackButton />}
     </div>
   );
 
@@ -3317,7 +3731,7 @@ const App = () => {
   // RENDERER: MAIN APP (STRUKTUR UTAMA & FOOTER)
   // ==========================================
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-900 overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-900 flex flex-col">
       <div className="max-w-4xl mx-auto py-4 sm:py-8 px-4 sm:px-0 flex-1 w-full">
         {view === 'menu' && renderMenu()}
         {view === 'topic' && renderTopic()}
